@@ -1,0 +1,18 @@
+<div style="width: 250px">
+  <hr>
+  <div class="row" >
+    <div class="col-md-4 text-center">
+      <img id="avatar" class="rounded-circle" src="{{user.avatar}}" width="30px" height="30px" alt="userImage">
+    </div>
+    <div class="col-md-8">
+      <a class="" id="username" href="#" style="color: orange; ">  {{user.username}}</a><br>
+      <div *ngIf="user.status">
+        <span class="">Online </span><div class="float-right" style="width: 10px;height: 10px;border-radius: 50%;background-color: springgreen"></div>
+      </div>
+      <div *ngIf="!user.status">
+        <span class="">Offline </span><div class="float-right" style="width: 10px;height: 10px;border-radius: 50%;background-color: red"></div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+.scrollable {
+  overflow-y: scroll;
+}
+
+#all-message {
+  height: 450px;
+  background:linear-gradient(to top,cornflowerblue,#D09CD2);
+  /*opacity: 0.5;*/
+  /*background-image: url("../../assets/images/IMG_20180930_074734.jpg");*/
+  background-size: cover;
+}

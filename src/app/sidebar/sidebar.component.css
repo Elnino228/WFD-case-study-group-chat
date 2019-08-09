@@ -1,0 +1,16 @@
+.scrollable {
+  overflow-y: scroll;
+}
+.sidebar{
+  background: rgba(210, 210, 210, 0.84);
+  border-top-right-radius: 0.2em;
+  border-bottom-right-radius: 0.2em;
+}
+#currentUser{
+  background-color: moccasin;
+}
+div app-user div div div img {
+  /*background-color: black;*/
+  width: 40px;
+  height: 40px;
+}

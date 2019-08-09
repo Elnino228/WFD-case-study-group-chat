@@ -1,0 +1,50 @@
+<div class="block-mes clearfix" >
+    <div class="position-relative">
+      <div [class.online]="message.ofUser.status" *ngIf="message.ofUser.status"
+           class="position-absolute"
+           style=""></div>
+      <div [class.offline]="!message.ofUser.status" *ngIf="!message.ofUser.status"
+           class="position-absolute"
+           style=""></div>
+      <img class="rounded-circle" [class.float-left]="!message.ofUser.status" [class.float-right]="message.ofUser.status" alt="Avatar" src="{{message.ofUser.avatar}}" style="width:30px;">
+    </div>
+  <div [class.mes-box-left]="!message.ofUser.status" [class.mes-box-right]="message.ofUser.status">
+    <p class="mb-0 text-primary" [class.text-left]="!message.ofUser.status" [class.text-right]="message.ofUser.status">{{message.ofUser.username}}</p>
+    <p class="text-break text-left mb-4" >{{message.content}}</p>
+  </div>
+  <span class="small text-light" [class.time-left]="!message.ofUser.status"
+        [class.time-right]="message.ofUser.status">
+    {{message.time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })}}</span>
+</div>
+
+<!--<div class="chatbox__messages flex">-->
+<!--  <img [class.right]="message.ofUser.status" alt="Avatar" src="../../assets/images/avatar1.png" style="width:20px;">-->
+<!--  <div class="chatbox__messages__user-message">-->
+<!--    <div class="chatbox__messages__user-message&#45;&#45;ind-message">-->
+<!--      <p class="name">{{message.ofUser.username}}</p>-->
+<!--      <br/>-->
+<!--      <p class="message">{{message.content}}</p>-->
+<!--    </div>-->
+<!--    <span [class.time-left]="message.ofUser.status"-->
+<!--          [class.time-right]="!message.ofUser.status">-->
+<!--    {{message.time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })}}</span>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--<div class="container darker">-->
+<!--  <img src="../../assets/images/avatar2.png" alt="Avatar" class="right" style="width:100%;">-->
+<!--  <p>Hey! I'm fine. Thanks for asking!</p>-->
+<!--  <span class="time-left">11:01</span>-->
+<!--</div>-->
+
+<!--<div class="container">-->
+<!--  <img src="../../assets/images/avatar3.png" alt="Avatar" style="width:100%;">-->
+<!--  <p>Sweet! So, what do you wanna do today?</p>-->
+<!--  <span class="time-right">11:02</span>-->
+<!--</div>-->
+
+<!--<div class="container darker">-->
+<!--  <img src="../../assets/images/avatar4.png" alt="Avatar" style="width:100%;">-->
+<!--  <p>Nah, I dunno. Play soccer.. or learn more coding perhaps?</p>-->
+<!--  <span class="time-left">11:05</span>-->
+<!--</div>-->

@@ -1,0 +1,16 @@
+<div class="sidebar">
+  <div class="position-relative" style="top:50px; width: 265px;height: 50px;">
+    <div id="currentUser" style="position: fixed;top: 30px;width: 265px">
+      <app-user [user]="authService.currentUser"></app-user>
+    </div>
+  </div>
+  <div class="position-fixed" style="top:105px; width: 280px;">
+    <app-search></app-search>
+  </div>
+  <div class="position-fixed scrollable mt-2" style="top: 150px;height: 350px;width: 280px">
+    <div *ngFor="let user of userList">
+      <app-user [user]="user"></app-user>
+    </div>
+  </div>
+</div>
+
