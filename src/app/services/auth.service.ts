@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
-import {User} from './models/User';
+import {User} from '../models/User';
+import {Router} from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -14,9 +15,12 @@ export class AuthService {
     {id: 5, username: 'Khanh', password: '123', avatar: '../../assets/images/avatar2.png', status: false},
   ];
   currentUser: User;
+
   admin: User = {id: 1000, username: 'admin', password: '123', avatar: '../../assets/images/avatar2.png', status: false};
 
-  constructor() {
+  loginSuccess = false;
+
+  constructor(private router: Router) {
     this.currentUser = {
       id: 0,
       username: 'Dat',
@@ -27,7 +31,7 @@ export class AuthService {
   }
 
   isAuthenticated(): boolean {
-    return this.currentUser.username === this.admin.username && this.currentUser.password === this.admin.password;
+    return this.loginSuccess;
   }
 
   login(user: User) {
@@ -36,15 +40,25 @@ export class AuthService {
       if (user.username === this.users[i].username && user.password === this.users[i].password) {
         this.users[i].status = true;
         this.currentUser = this.users[i];
+        this.loginSuccess = true;
       }
     }
+    this.toChatGroup();
+  }
 
-
-    // this.curentUser.status = true;
+  toChatGroup() {
+    if (this.loginSuccess) {
+      alert('Login successfully');
+      this.router.navigateByUrl('/chat');
+    } else {
+      this.router.navigateByUrl('/login');
+      alert('Login is failed. Please try again!');
+    }
   }
 
   logout() {
     this.currentUser = new User();
+    this.loginSuccess = false;
   }
 
   getUsers() {

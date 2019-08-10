@@ -1,6 +1,6 @@
-<div class="sidebar">
+<!--<div class="sidebar" style="z-index: -1">-->
   <div class="position-relative" style="top:50px; width: 265px;height: 50px;">
-    <div id="currentUser" style="position: fixed;top: 30px;width: 265px">
+    <div id="currentUser" style="position: fixed;top: 30px;width: 265px; z-index: -1">
       <app-user [user]="authService.currentUser"></app-user>
     </div>
   </div>
@@ -12,5 +12,5 @@
       <app-user [user]="user"></app-user>
     </div>
   </div>
-</div>
+<!--</div>-->
 

@@ -9,8 +9,7 @@
 #currentUser{
   background-color: moccasin;
 }
-div app-user div div div img {
-  /*background-color: black;*/
+div>app-user>div>div>div>img {
   width: 40px;
   height: 40px;
 }

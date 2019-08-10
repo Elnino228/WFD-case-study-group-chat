@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {Message} from '../models/Message';
-import {AppMessageService} from '../appMessage.service';
-import {AuthService} from '../auth.service';
+import {Message} from '../../../models/Message';
+import {AppMessageService} from '../../../services/appMessage.service';
+import {AuthService} from '../../../services/auth.service';
 
 @Component({
   selector: 'app-main',

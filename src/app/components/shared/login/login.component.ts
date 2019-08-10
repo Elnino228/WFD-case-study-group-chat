@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {User} from '../models/User';
-import {AuthService} from '../auth.service';
-import {AppMessageService} from '../appMessage.service';
+import {User} from '../../../models/User';
+import {AuthService} from '../../../services/auth.service';
+import {AppMessageService} from '../../../services/appMessage.service';
 
 @Component({
   selector: 'app-login',
@@ -30,15 +30,16 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.authService.login(this.user);
-    const messages = this.appMessageService.getMessages();
-    for (let i = 0; i < messages.length; i++) {
-      messages[i].ofUser.status = false;
-      if (this.authService.currentUser.id === messages[i].ofUser.id) {
-        messages[i].ofUser.status = true;
+    if (this.authService.loginSuccess) {
+      const messages = this.appMessageService.getMessages();
+      for (let i = 0; i < messages.length; i++) {
+        messages[i].ofUser.status = false;
+        if (this.authService.currentUser.id === messages[i].ofUser.id) {
+          messages[i].ofUser.status = true;
+        }
       }
+      this.initUser();
     }
-    this.initUser();
-    alert('Login successfully');
   }
 
   logout() {

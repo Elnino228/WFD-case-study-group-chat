@@ -1,0 +1,8 @@
+#wellcome{
+  background:linear-gradient(to top,cornflowerblue,#D09CD2);
+}
+h1{
+  background: linear-gradient(to top,#FFEB3B,#ffffff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color: transparent;
+}

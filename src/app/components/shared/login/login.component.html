@@ -1,0 +1,60 @@
+<!--<form [formGroup]="formLogin" class="form-inline position-absolute " style="right: 0px; top: 5px">-->
+<!--  <label for="email" class="mr-sm-2 small text-light">Username:</label>-->
+<!--  <input formControlName="username" [(ngModel)]="user.username" type="email" class="form-control form-control-sm mb-2 mr-sm-2" id="email">-->
+<!--  <label for="pwd" class="mr-sm-2 small text-light">Password:</label>-->
+<!--  <input formControlName="password" [(ngModel)]="user.password" type="password" class="form-control form-control-sm mb-2 mr-sm-2 " id="pwd">-->
+<!--  <button style="background-color: #D09CD2" type="submit" class="btn  btn-sm mb-2 mr-2" (click)="login()">Login</button>-->
+<!--  <button style="background-color: #D09CD2" type="button" class="btn  btn-sm mb-2 " (click)="logout()">Logout</button>-->
+<!--</form>-->
+<div style="height: 435px">
+  <form [formGroup]="formLogin" (ngSubmit)="login()">
+    <div class="group">
+      <input type="text" formControlName="username" [(ngModel)]="user.username" placeholder="Name"><span class="highlight"></span><span
+      class="bar"></span>
+    </div>
+    <div class="group">
+      <input type="password" formControlName="password" [(ngModel)]="user.password" placeholder="Password"><span class="highlight"></span><span
+      class="bar"></span>
+    </div>
+    <button type="submit" class="button buttonBlue">Login
+      <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+    </button>
+  </form>
+</div>
+<script>
+    $(window, document, undefined).ready(function () {
+
+        $('input').blur(function () {
+            var $this = $(this);
+            if ($this.val())
+                $this.addClass('used');
+            else
+                $this.removeClass('used');
+        });
+
+        var $ripples = $('.ripples');
+
+        $ripples.on('click.Ripples', function (e) {
+
+            var $this = $(this);
+            var $offset = $this.parent().offset();
+            var $circle = $this.find('.ripplesCircle');
+
+            var x = e.pageX - $offset.left;
+            var y = e.pageY - $offset.top;
+
+            $circle.css({
+                top: y + 'px',
+                left: x + 'px'
+            });
+
+            $this.addClass('is-active');
+
+        });
+
+        $ripples.on('animationend webkitAnimationEnd mozAnimationEnd oanimationend MSAnimationEnd', function (e) {
+            $(this).removeClass('is-active');
+        });
+
+    });
+</script>

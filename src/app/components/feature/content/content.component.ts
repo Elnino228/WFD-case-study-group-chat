@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {User} from '../models/User';
-import {AppMessageService} from '../appMessage.service';
-import {Message} from '../models/Message';
+import {User} from '../../../models/User';
+import {AppMessageService} from '../../../services/appMessage.service';
+import {Message} from '../../../models/Message';
 
 @Component({
   selector: 'app-content',

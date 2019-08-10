@@ -1,6 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {Message} from '../models/Message';
-import {AuthService} from '../auth.service';
+import {Message} from '../../../models/Message';
+import {AuthService} from '../../../services/auth.service';
 
 @Component({
   selector: 'app-sent',
