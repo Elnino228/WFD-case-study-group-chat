@@ -18,6 +18,7 @@ import {LoginComponent} from './components/shared/login/login.component';
 import {ButtonsModule, MDBBootstrapModule, WavesModule} from 'angular-bootstrap-md';
 import { GroupChatComponent } from './group-chat/group-chat.component';
 import { WellcomeComponent } from './components/shared/wellcome/wellcome.component';
+import { ReceiverComponent } from './components/feature/receiver/receiver.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { WellcomeComponent } from './components/shared/wellcome/wellcome.compone
     HeaderComponent,
     LoginComponent,
     GroupChatComponent,
-    WellcomeComponent
+    WellcomeComponent,
+    ReceiverComponent
   ],
   imports: [
     BrowserModule,

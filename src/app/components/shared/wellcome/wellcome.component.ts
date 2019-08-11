@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import * as $ from 'jquery';
+import {AuthService} from '../../../services/auth.service';
 
 @Component({
   selector: 'app-wellcome',
@@ -8,7 +9,7 @@ import * as $ from 'jquery';
 })
 export class WellcomeComponent implements OnInit {
 
-  constructor() {
+  constructor(private authService: AuthService) {
   }
 
   ngOnInit() {
@@ -16,6 +17,11 @@ export class WellcomeComponent implements OnInit {
 
   hideWelCome() {
     $('#wellcome').slideUp();
+  }
+
+  logout() {
+    this.hideWelCome();
+    this.authService.logout();
   }
 
 }

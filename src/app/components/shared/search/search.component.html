@@ -1,4 +1,4 @@
 <form class="form-inline sticky-top mt-1 mb-2">
-  <input class="form-control form-control-sm"  type="text" placeholder="Search" aria-label="Search">
-  <button style="background-color: #D09CD2" class="btn  btn-sm" type="submit" >Search</button>
+  <input class="form-control form-control-sm"  type="text" placeholder="Search" aria-label="Search" name="keyword" [(ngModel)]="keyword">
+  <button style="background-color: #D09CD2" class="btn  btn-sm" type="submit" (click)="doSearch()">Search</button>
 </form>

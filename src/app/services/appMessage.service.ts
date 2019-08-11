@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {Message} from '../models/Message';
 import * as $ from 'jquery';
 import {User} from '../models/User';
+import {AuthService} from './auth.service';
 
 @Injectable({
   providedIn: 'root'

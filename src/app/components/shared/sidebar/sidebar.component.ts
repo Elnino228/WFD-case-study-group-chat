@@ -9,11 +9,17 @@ import {User} from '../../../models/User';
 })
 export class SidebarComponent implements OnInit {
   userList: User[];
+
   constructor(private authService: AuthService) {
     this.userList = this.authService.getUsers();
+    const id = this.authService.currentUser.id;
+    this.userList.splice(id, 1);
   }
 
   ngOnInit() {
   }
 
+  search(keyword: string) {
+    this.userList = this.authService.search(keyword);
+  }
 }

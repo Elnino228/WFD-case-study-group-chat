@@ -1,11 +1,11 @@
 
 <nav class="navbar navbar-expand-sm navbar-light   p-0" style="background-color: #9C27B0; ">
-  <a class="navbar-brand" href="#">
+  <a class="navbar-brand" routerLink="">
     <img class="rounded-circle bg-light" width="40px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1200px-Angular_full_color_logo.svg.png">
     <span class="text-light"> Angular</span>
   </a>
-<!--  <div class="">-->
-<!--    <app-login></app-login>-->
-<!--  </div>-->
+  <div *ngIf="authService.loginSuccess" class="position-absolute " style="right: 15px">
+    <a class="text-light" routerLink="logout" (click)="logout()">Logout</a>
+  </div>
 </nav>
 <div  style="height: 10px; background-color: white;"></div>

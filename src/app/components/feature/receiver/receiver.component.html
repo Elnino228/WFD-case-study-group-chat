@@ -1,0 +1,18 @@
+<div class="" style="height: 50px;width: 810px; background-color: #ce9cd3;border-top-right-radius: 30px">
+<!--  <div class="float-right" style="width: 15px;height: 50px; background-color: #cb9bd2"></div>-->
+  <div id="receiver" style="position: relative;top: 10px;left: 20px;">
+    <img id="avatar" class="rounded-circle float-left" src="{{authService.receiver.avatar}}" width="30px" height="30px"
+         alt="userImage">
+    <div class="" style="position: relative;top: 5px;left: 5px;">
+      <div class="float-left text-light">{{authService.receiver.username}}</div>
+      <div *ngIf="!authService.receiver.status" class="float-left"
+           style="margin: 5px;width: 10px;height: 10px;border-radius: 50%;background-color: red;"></div>
+      <span *ngIf="!authService.receiver.status" class="text-secondary " style="">offline</span>
+      <div *ngIf="authService.receiver.status" class="float-left"
+           style="margin: 5px;width: 10px;height: 10px;border-radius: 50%;background-color: springgreen;"></div>
+      <span *ngIf="authService.receiver.status" class="text-secondary " style="">offline</span>
+    </div>
+  </div>
+</div>
+<hr style="margin: 1px">
+
