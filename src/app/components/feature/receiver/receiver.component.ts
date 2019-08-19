@@ -9,7 +9,7 @@ import {User} from '../../../models/User';
 })
 export class ReceiverComponent implements OnInit {
 
-  constructor(private authService: AuthService) {
+  constructor(public authService: AuthService) {
   }
 
   ngOnInit() {

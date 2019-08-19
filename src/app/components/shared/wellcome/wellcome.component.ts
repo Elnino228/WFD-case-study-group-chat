@@ -9,7 +9,7 @@ import {AuthService} from '../../../services/auth.service';
 })
 export class WellcomeComponent implements OnInit {
 
-  constructor(private authService: AuthService) {
+  constructor(public authService: AuthService) {
   }
 
   ngOnInit() {

@@ -8,10 +8,12 @@ import {User} from '../../../models/User';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
-  userList: User[];
+  userList: User[] = [];
 
-  constructor(private authService: AuthService) {
-    this.userList = this.authService.getUsers();
+  constructor(public authService: AuthService) {
+    for (const user of this.authService.getUsers()) {
+      this.userList.push(user);
+    }
     const id = this.authService.currentUser.id;
     this.userList.splice(id, 1);
   }

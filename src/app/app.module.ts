@@ -19,6 +19,7 @@ import {ButtonsModule, MDBBootstrapModule, WavesModule} from 'angular-bootstrap-
 import { GroupChatComponent } from './group-chat/group-chat.component';
 import { WellcomeComponent } from './components/shared/wellcome/wellcome.component';
 import { ReceiverComponent } from './components/feature/receiver/receiver.component';
+import {AuthService} from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,7 @@ import { ReceiverComponent } from './components/feature/receiver/receiver.compon
     WavesModule,
     MDBBootstrapModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
